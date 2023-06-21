@@ -1,18 +1,29 @@
 <template>
   <div id="app">
     <FormularioWeb/>
+    <SelectDinamico :options="[]"/>
   </div>
 </template>
 
 <script>
 import FormularioWeb from './components/FormularioWeb.vue'
+import SelectDinamico from './components/SelectDinamico.vue'
 
 
 export default {
   name: 'App',
   components: {
-
-    FormularioWeb
+    FormularioWeb,
+    SelectDinamico,
+  },
+  data() {
+    return {
+      options: [
+        { name: "Angular", value: "angular"},
+        { name: "Vue", value: "vue"},
+      ],
+      value: "angular",
+    }
   }
 }
 </script>

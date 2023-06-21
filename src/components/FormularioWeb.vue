@@ -54,6 +54,39 @@
         </select>
     </div>
 
+    <div>
+      <input
+        type="radio"
+        name="documentType"
+        id="documentPasswort"
+        v-model="document"
+        value="passport"
+      />
+      <label for="documentPassport">Pasaporte</label>
+    </div>
+    <div>
+      <input
+        type="radio"
+        name="documentType"
+        id="documentVisa"
+        v-model="document"
+        value="passport"
+      />
+      <label for="documentVisa">CNI</label>
+    </div>
+    <div>
+      <input
+        type="radio"
+        name="documentType"
+        id="documentCni"
+        v-model="document"
+        value="visa"
+      />
+      <label for="documentCni">Visa</label>
+    </div>
+
+    <button>Enviar</button>
+
   </form>
 
 </template>
@@ -68,7 +101,8 @@ export default {
       legal: "false",
       checks: [],
       country: "ch",
-      multiCountry: []
+      multiCountry: [],
+      document:"",
     };
   }
 }

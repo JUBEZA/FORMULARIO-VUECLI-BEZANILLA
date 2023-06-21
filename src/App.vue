@@ -1,30 +1,59 @@
 <template>
   <div id="app">
-    <FormularioWeb/>
-    <SelectDinamico :options="options" :label="SelectDinamico" id="dynamic" v-model="framework"/>
+    <FormularioValidacion @formulario="handleFormulario"/>
+    <hr/>
+    <RenderElementos :datos="datosFormulario"/>
+    <!-- <ModificadoresEntrada/>
+    <hr/>
+    <ModificadoresEventos/>
+    <SelectDinamico :options=options
+    label="Select Dinamico"
+    id="dynamicSelect"
+    v-model="framework"/>
+  v-model toma el valor desde adentro del selectDinamico, emitido por el inputHandler
+    <FormularioContacto />
+    <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
 
 <script>
-// import ModificadoresEvento from './components/FormularioWeb.vue'
-// import FormularioWeb from './components/FormularioWeb.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import FormularioContacto from './components/FormularioContacto.vue'
 // import SelectDinamico from './components/SelectDinamico.vue'
-
+// import ModificadoresEventos from './components/ModificadoresEventos.vue'
+// import ModificadoresEntrada from './components/ModificadoresEntrada.vue'
+import FormularioValidacion from './components/FormularioValidacion.vue'
+import RenderElementos from './components/RenderElementos.vue'
 
 export default {
   name: 'App',
   components: {
-    // FormularioWeb,
-    // SelectDinamico,
-    // ModificadoresEvento,
+    // HelloWorld,
+    // FormularioContacto,
+   // SelectDinamico,
+   // ModificadoresEventos,
+   // ModificadoresEntrada,
+    FormularioValidacion,
+    RenderElementos
+
+
   },
   data() {
     return {
-      options: [
-        { name: "Angular", value: "angular"},
-        { name: "Vue", value: "vue"},
+      datosFormulario:{},
+
+      options:[
+        {name: "Angular" , value: "angular"},
+        {name: "Vue",value: "vue" },
+        {name: "React",value: "react" },
+        {name: "HTML",value: "html" }
       ],
-      framework: "angular",
+      framework:""
+    }
+  },
+  methods:{
+    handleFormulario(model){
+      this.datosFormulario=model;
     }
   }
 }
@@ -38,9 +67,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.logo-small{
-  widht: 6em;
 }
 </style>

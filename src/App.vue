@@ -1,20 +1,22 @@
 <template>
   <div id="app">
     <FormularioWeb/>
-    <SelectDinamico :options="[]"/>
+    <SelectDinamico :options="options" :label="SelectDinamico" id="dynamic" v-model="framework"/>
   </div>
 </template>
 
 <script>
-import FormularioWeb from './components/FormularioWeb.vue'
-import SelectDinamico from './components/SelectDinamico.vue'
+// import ModificadoresEvento from './components/FormularioWeb.vue'
+// import FormularioWeb from './components/FormularioWeb.vue'
+// import SelectDinamico from './components/SelectDinamico.vue'
 
 
 export default {
   name: 'App',
   components: {
-    FormularioWeb,
-    SelectDinamico,
+    // FormularioWeb,
+    // SelectDinamico,
+    // ModificadoresEvento,
   },
   data() {
     return {
@@ -22,7 +24,7 @@ export default {
         { name: "Angular", value: "angular"},
         { name: "Vue", value: "vue"},
       ],
-      value: "angular",
+      framework: "angular",
     }
   }
 }
